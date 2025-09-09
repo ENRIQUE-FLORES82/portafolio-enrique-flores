@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-primario: #000000;
+    --color-secundario: #F6F6F6;
+    --color-terciario: #22D4FD;
+
+    --fuente-montserrat: "Montserrat", sans serif;
+    --fuente-krona: "Krona One", sans serif;
+}
+
+/* ========== RESET GLOBAL ===========*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    font-family: var(--fuente-montserrat);
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========== ESTILOS PERSONALIZADOS ===========*/
+
+.titulo-destaque{
+    color: var(--color-terciario);
+}
+
+h1:hover{
+    color: blue;
+}
+
+.header{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2% 5%; /* ← padding lateral aquí */
+}
+
+.header__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.header__menu__link{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+.presentacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6% 5%; /* ← padding lateral aquí */
+}
+
+.presentacion__contenido{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.presentacion__contenido__titulo{
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+    padding: 0 1rem;   /* añade espacio a los lados */
+    text-align: left;  /* evita que se corte en móviles */
+    word-wrap: break-word;
+}
+
+.presentacion__contenido__texto{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+}
+
+.presentacion__enlaces{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.presentacion__enlaces__subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion__enlaces__link{
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0;
+    border-radius: 8px;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-secundario);
+    border: 2px solid var(--color-terciario);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.presentacion__enlaces__link:hover{
+    background-color: blue;
+}
+
+.presentacion__imagen{
+    width: 50%;
+}
+
+.footer{
+    background-color: var(--color-terciario);
+    padding: 24px 5%; /* ← padding lateral aquí */
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.color__linea{
+    background-color: var(--color-terciario);  
+    height: 3px;
+    border: none;   
+}
+
+.presentacion__contenido__ul {
+    margin: 0 2rem;         /* margen a los lados */
+    padding-left: 1.5rem;   /* asegura que se vean las viñetas */
+    list-style-type: disc;  /* activa las viñetas */
+    list-style-position: outside;
+}
+
+.presentacion__contenido__li{
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+
+
+/* ========== MEDIA QUERY ===========*/
+
+@media (max-width: 1200px){
+    .header{
+        padding: 5% 3%;
+    }
+
+    .header__menu{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .header__menu__link{
+        text-decoration: none;
+        padding: 8px 12px;
+        word-wrap: break-word;
+    }
+
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 5% 3%;
+    }
+
+    .presentacion__contenido__titulo{
+        max-width: 100%;
+    }
+
+}
+
+/* ========== MEDIA QUERY PARA MOVIL===========*/
+
+@media (max-width: 768px) {
+    .presentacion__contenido__titulo {
+        font-size: 1.8rem;  /* más pequeño en móvil */
+        padding: 0 0.8rem; /* espacio lateral */
+    }
+
+
+    .presentacion__contenido__ul {
+        margin: 0 1rem;
+        padding-left: 1.2rem; /* asegura viñetas visibles */
+    }
+
+    .presentacion__contenido__li {
+        font-size: 1.1rem;  /* un poco más pequeño en móvil */
+        line-height: 1.6;
+    }
+}
